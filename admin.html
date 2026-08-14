@@ -2,804 +2,99 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>YH NEXORA | Admin</title>
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-    background:#020817;
-    color:white;
-    min-height:100vh;
-}
-
-.hidden{
-    display:none!important;
-}
-
-/* LOGIN */
-
-.login-page{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-    radial-gradient(circle at top,#102b65,#020817 55%);
-    padding:20px;
-}
-
-.login-box{
-    width:400px;
-    max-width:100%;
-    background:rgba(5,15,38,.95);
-    border:1px solid #168cff;
-    border-radius:25px;
-    padding:40px 30px;
-    box-shadow:0 0 50px rgba(0,140,255,.25);
-    text-align:center;
-}
-
-.logo{
-    width:90px;
-    height:90px;
-    object-fit:contain;
-    margin-bottom:15px;
-}
-
-.login-box h1{
-    font-size:28px;
-    margin-bottom:5px;
-}
-
-.login-box h1 span{
-    color:#ffb300;
-}
-
-.login-box p{
-    color:#aaa;
-    margin-bottom:30px;
-}
-
-.input{
-    width:100%;
-    padding:15px;
-    margin:8px 0;
-    border-radius:10px;
-    border:1px solid #234d85;
-    background:#07142d;
-    color:white;
-    outline:none;
-}
-
-.input:focus{
-    border-color:#00aaff;
-}
-
-.login-btn{
-    width:100%;
-    padding:15px;
-    margin-top:15px;
-    border:0;
-    border-radius:12px;
-    background:linear-gradient(90deg,#ffad00,#ffcc33);
-    color:#111;
-    font-weight:bold;
-    font-size:16px;
-    cursor:pointer;
-}
-
-.error{
-    color:#ff5555;
-    margin-top:15px;
-    font-size:14px;
-}
-
-/* ADMIN */
-
-.admin{
-    min-height:100vh;
-}
-
-.topbar{
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 30px;
-    background:#050d20;
-    border-bottom:1px solid #16477c;
-    position:sticky;
-    top:0;
-    z-index:20;
-}
-
-.topbar h2{
-    color:#fff;
-}
-
-.topbar h2 span{
-    color:#ffb300;
-}
-
-.logout{
-    background:#ff3344;
-    color:white;
-    border:0;
-    padding:10px 18px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:30px 20px;
-}
-
-.welcome{
-    margin-bottom:25px;
-}
-
-.welcome h1{
-    font-size:32px;
-}
-
-.welcome span{
-    color:#ffb300;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.card{
-    background:#07142d;
-    border:1px solid #174f91;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
-
-.card.full{
-    grid-column:1/-1;
-}
-
-.card h2{
-    color:#ffb300;
-    margin-bottom:20px;
-}
-
-label{
-    display:block;
-    color:#bbb;
-    margin:14px 0 7px;
-}
-
-textarea,
-select{
-    width:100%;
-    padding:13px;
-    border-radius:9px;
-    border:1px solid #255b96;
-    background:#020b1e;
-    color:white;
-    outline:none;
-}
-
-textarea{
-    min-height:100px;
-    resize:vertical;
-}
-
-.save-btn{
-    background:linear-gradient(90deg,#008cff,#00c6ff);
-    color:white;
-    border:0;
-    padding:14px 25px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    margin-top:20px;
-}
-
-.image-box{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.preview{
-    width:130px;
-    height:130px;
-    border-radius:15px;
-    object-fit:cover;
-    border:2px solid #168cff;
-    background:#020817;
-}
-
-input[type="file"]{
-    color:#aaa;
-    width:100%;
-}
-
-.status{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    background:#09b66d;
-    padding:14px 20px;
-    border-radius:10px;
-    display:none;
-}
-
-@media(max-width:800px){
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .card.full{
-        grid-column:auto;
-    }
-
-    .topbar{
-        padding:0 15px;
-    }
-
-    .container{
-        padding:20px 12px;
-    }
-}
+:root{--bg:#030816;--card:#081a35;--line:#148cff44;--gold:#ffc21c;--cyan:#00c8ff;--text:#f7f9ff;--muted:#98a8c0}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial;background:radial-gradient(circle at 10% 0,#163b70,transparent 28%),radial-gradient(circle at 90% 20%,#35115e,transparent 30%),var(--bg);color:var(--text);min-height:100vh}button,input,textarea{font:inherit}.wrap{width:min(1100px,94%);margin:auto;padding:30px 0}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.brand{font-weight:900;font-size:18px}.brand span{color:var(--gold)}.sub{font-size:11px;color:var(--muted);margin-top:4px}.card{background:#07162fe8;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 20px 70px #0008;margin-bottom:15px}.login{max-width:430px;margin:10vh auto}.field{width:100%;padding:12px 13px;border-radius:10px;border:1px solid #ffffff18;background:#020914;color:#fff;margin:6px 0 13px;outline:none}.field:focus{border-color:var(--cyan)}.btn{border:0;border-radius:10px;padding:11px 15px;background:#ffffff0b;color:#fff;cursor:pointer;border:1px solid #ffffff15}.primary{background:linear-gradient(135deg,#00cfff,#126dff);font-weight:800}.gold{background:linear-gradient(135deg,#ffc21c,#ff8b00);color:#08101d;font-weight:900}.danger{background:#ff355b22;border-color:#ff355b55}.grid{display:grid;grid-template-columns:220px 1fr;gap:15px}.tabs{display:flex;flex-direction:column;gap:6px}.tabs button{text-align:left}.tabs button.active{border-color:#00c8ff55;background:#00c8ff14}.page{display:none}.page.active{display:block}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}label{font-size:10px;color:#aab8ce}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.item{padding:13px;border:1px solid #ffffff12;border-radius:12px;margin:8px 0;background:#ffffff04}.item b{display:block}.item small{display:block;color:var(--muted);margin:5px 0 10px;line-height:1.5}.preview{max-width:100%;max-height:180px;border-radius:12px;border:1px solid #ffffff14;margin-top:8px;object-fit:cover}.note{font-size:10px;color:var(--muted);line-height:1.7}.status{position:fixed;right:18px;top:18px;padding:10px 14px;border-radius:10px;background:#09203c;border:1px solid #00c8ff55;display:none}.status.show{display:block}@media(max-width:760px){.grid,.fields{grid-template-columns:1fr}.tabs{flex-direction:row;overflow:auto}.tabs button{white-space:nowrap}.full{grid-column:auto}}
 </style>
 </head>
-
 <body>
-
-<!-- LOGIN -->
-
-<section id="loginPage" class="login-page">
-
-<div class="login-box">
-
-<img src="YH_NEXORA_NEW_LOGO.svg" class="logo">
-
-<h1>YH <span>NEXORA</span></h1>
-<p>Administrator Login</p>
-
-<input
-id="email"
-class="input"
-type="email"
-placeholder="Admin Email">
-
-<input
-id="password"
-class="input"
-type="password"
-placeholder="Password">
-
-<button class="login-btn" onclick="login()">
-LOGIN TO ADMIN
-</button>
-
-<div id="error" class="error"></div>
-
-</div>
+<div class="wrap">
+<div class="top"><div><div class="brand">YH <span>NEXORA</span> TECHNOLOGIES</div><div class="sub">Server-backed Admin Control Center</div></div><a class="btn" href="index.html">← Website</a></div>
+<section id="login" class="card login">
+<h2>Admin Login 👑</h2><p class="note">Changes saved here are stored on the website backend, so they can appear on other phones and laptops too.</p>
+<label>Email</label><input id="email" class="field" type="email" value="yhnexora@ai.com">
+<label>Password</label><input id="password" class="field" type="password" value="yhnexora5436@">
+<div id="loginErr" class="note"></div><button class="btn primary" style="width:100%" onclick="login()">Login to Admin →</button>
 </section>
 
-
-<!-- ADMIN DASHBOARD -->
-
-<section id="adminPage" class="admin hidden">
-
-<header class="topbar">
-
-<h2>YH <span>NEXORA</span> ADMIN</h2>
-
-<button class="logout" onclick="logout()">
-Logout
-</button>
-
-</header>
-
-
-<div class="container">
-
-<div class="welcome">
-
-<h1>Welcome, <span>Admin 👋</span></h1>
-
-<p>Manage your YH NEXORA website from here.</p>
-
-</div>
-
-
+<section id="app" style="display:none">
 <div class="grid">
-
-
-<!-- COMPANY -->
-
-<div class="card">
-
-<h2>🏢 Company Details</h2>
-
-<label>Company Name</label>
-<input id="companyName" class="input" value="YH NEXORA TECHNOLOGIES">
-
-<label>Tagline</label>
-<input id="tagline" class="input" value="Ideas Into Impact">
-
-<label>Establishment Date</label>
-<input id="establishment" class="input" value="28/10/2025">
-
-<label>Location</label>
-<input id="location" class="input" value="Online (Remote)">
-
+<div class="card tabs">
+<button class="btn active" onclick="tab('home',this)">⌂ Home</button>
+<button class="btn" onclick="tab('about',this)">◎ People</button>
+<button class="btn" onclick="tab('services',this)">✦ Services</button>
+<button class="btn" onclick="tab('portfolio',this)">▣ Portfolio</button>
+<button class="btn" onclick="tab('pricing',this)">₹ Pricing</button>
+<button class="btn" onclick="tab('contact',this)">✉ Contact</button>
+<button class="btn danger" onclick="logout()">↪ Logout</button>
 </div>
-
-
-<!-- FOUNDER -->
-
-<div class="card">
-
-<h2>👤 Founder</h2>
-
-<label>Founder Name</label>
-<input id="founderName" class="input" value="Yeswanth">
-
-<label>Founder Image</label>
-
-<div class="image-box">
-
-<img id="founderPreview" class="preview">
-
-<input
-type="file"
-accept="image/*"
-onchange="uploadImage(event,'founder')">
-
-</div>
-
-</div>
-
-
-<!-- CO FOUNDER -->
-
-<div class="card">
-
-<h2>👥 Co-Founder</h2>
-
-<label>Co-Founder Name</label>
-<input id="cofounderName" class="input" value="Amar nadh">
-
-<label>Co-Founder Image</label>
-
-<div class="image-box">
-
-<img id="cofounderPreview" class="preview">
-
-<input
-type="file"
-accept="image/*"
-onchange="uploadImage(event,'cofounder')">
-
-</div>
-
-</div>
-
-
-<!-- ABOUT -->
-
-<div class="card">
-
-<h2>ℹ️ About Us</h2>
-
-<label>About Company</label>
-
-<textarea id="aboutText">At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics, and run smart promotions to help your brand grow online.</textarea>
-
-</div>
-
-
-<!-- SERVICES -->
-
-<div class="card full">
-
-<h2>🛠 Services</h2>
-
-<label>Service 1</label>
-<input id="service1" class="input"
-value="Website Development">
-
-<label>Service 1 Description</label>
-<textarea id="service1Desc">Modern, Responsive & High-Performance Websites for Your Business.</textarea>
-
-
-<label>Service 2</label>
-<input id="service2" class="input"
-value="Graphic Design">
-
-<label>Service 2 Description</label>
-<textarea id="service2Desc">Logos, Banners, Posters, Social Media Designs & More.</textarea>
-
-
-<label>Service 3</label>
-<input id="service3" class="input"
-value="Digital Promotions">
-
-<label>Service 3 Description</label>
-<textarea id="service3Desc">Social Media Marketing, Branding, Promotion & Growth.</textarea>
-
-</div>
-
-
-<!-- STATS -->
-
-<div class="card">
-
-<h2>📊 Website Stats</h2>
-
-<label>Happy Clients</label>
-<input id="clients" class="input" value="0+">
-
-<label>Projects Done</label>
-<input id="projects" class="input" value="0+">
-
-<label>Creative Minds</label>
-<input id="minds" class="input" value="2">
-
-<label>Big Dreams</label>
-<input id="dreams" class="input" value="∞">
-
-</div>
-
-
-<!-- PRICING -->
-
-<div class="card">
-
-<h2>💰 Pricing</h2>
-
-<label>Website Development Price</label>
-<input id="websitePrice" class="input" value="₹10,000">
-
-<label>YouTube Thumbnail Price</label>
-<input id="thumbnailPrice" class="input" value="₹300">
-
-</div>
-
-
-<!-- CONTACT -->
-
-<div class="card">
-
-<h2>📞 Contact Details</h2>
-
-<label>WhatsApp</label>
-<input id="whatsapp" class="input"
-value="@yeswanth5436">
-
-<label>Email</label>
-<input id="contactEmail" class="input"
-value="yeswanthram29@gmail.com">
-
-<label>Instagram</label>
-<input id="instagram" class="input"
-value="YH NEXORA TECHNOLOGIES">
-
-</div>
-
-
-<!-- PORTFOLIO -->
-
-<div class="card full">
-
-<h2>📁 Portfolio Project</h2>
-
-<label>Project Name</label>
-<input id="portfolioName" class="input"
-value="Love Proposal Website 💗">
-
-<label>Project Description</label>
-
-<textarea id="portfolioDescription">Interactive Love Proposal Website with animations, music and no-button escape.</textarea>
-
-<label>Project Status</label>
-
-<select id="portfolioStatus">
-
-<option>Live</option>
-<option>Coming Soon</option>
-<option>Private</option>
-
-</select>
-
-</div>
-
-
-<!-- FOUNDER MESSAGE -->
-
-<div class="card full">
-
-<h2>💡 Founder's Desk</h2>
-
-<label>Founder Quote</label>
-
-<textarea id="founderQuote">Dream big, work smart, and let technology do the magic.</textarea>
-
-</div>
-
-
-</div>
-
-
-<button class="save-btn" onclick="saveData()">
-💾 SAVE ALL CHANGES
-</button>
-
-</div>
-
+<div>
+<div id="home" class="page active card"><h2>Home</h2><label>Hero description</label><textarea id="heroDesc" class="field" rows="5"></textarea><button class="btn primary" onclick="save()">Save Home</button></div>
+
+<div id="about" class="page card"><h2>People & About</h2><div class="fields">
+<div><label>Founder name</label><input id="founder" class="field"></div>
+<div><label>Co-Founder name</label><input id="co" class="field"></div>
+<div><label>Established date</label><input id="established" class="field" value="21/08/2026"></div>
+<div><label>About text</label><textarea id="aboutText" class="field" rows="3"></textarea></div>
+<div><label>Founder photo</label><input id="founderImg" class="field" type="file" accept="image/*"><img id="founderPreview" class="preview"></div>
+<div><label>Co-Founder photo</label><input id="coImg" class="field" type="file" accept="image/*"><img id="coPreview" class="preview"></div>
+</div><button class="btn primary" onclick="save()">Save People/About</button></div>
+
+<div id="services" class="page card"><div class="row" style="justify-content:space-between"><h2>Services</h2><button class="btn gold" onclick="addService()">＋ Add Service</button></div><div id="serviceList"></div></div>
+
+<div id="portfolio" class="page card"><div class="row" style="justify-content:space-between"><h2>Portfolio</h2><button class="btn gold" onclick="addProject()">＋ Add Project</button></div><p class="note">Portfolio cards now use visual artwork instead of text-only placeholders. You can upload your own project image for any project.</p><div id="projectList"></div></div>
+
+<div id="pricing" class="page card"><h2>Pricing</h2><div class="fields">
+<div><label>Website Development</label><input id="websitePrice" class="field"></div>
+<div><label>YouTube Thumbnail</label><input id="thumbPrice" class="field" value="₹150"></div>
+</div><button class="btn primary" onclick="save()">Save Pricing</button></div>
+
+<div id="contact" class="page card"><h2>Contact & Social</h2><div class="fields">
+<div><label>WhatsApp number</label><input id="wa" class="field" value="93812 62063"></div>
+<div><label>Email</label><input id="mail" class="field"></div>
+<div class="full"><label>Instagram profile URL — this is editable from Admin</label><input id="insta" class="field" placeholder="https://www.instagram.com/yourpage/"></div>
+<div class="full"><label>Instagram display name</label><input id="instaLabel" class="field"></div>
+</div><button class="btn primary" onclick="save()">Save Contact</button></div>
+</div></div>
 </section>
-
-
-<div id="status" class="status">
-Saved Successfully ✓
 </div>
-
-
+<div id="status" class="status">Saved ✓</div>
 <script>
-
-/* LOGIN */
-
-const ADMIN_EMAIL = "yhnexora@ai.com";
-const ADMIN_PASSWORD = "yhnexora5436@";
-
-
-function login(){
-
-    const email =
-    document.getElementById("email").value.trim();
-
-    const password =
-    document.getElementById("password").value;
-
-    if(email === ADMIN_EMAIL &&
-       password === ADMIN_PASSWORD){
-
-        document.getElementById("loginPage")
-        .classList.add("hidden");
-
-        document.getElementById("adminPage")
-        .classList.remove("hidden");
-
-        loadData();
-
-    }else{
-
-        document.getElementById("error")
-        .textContent =
-        "Invalid email or password.";
-
-    }
-
+const API="/.netlify/functions/site-data";
+let token=sessionStorage.getItem("yhnexora_admin_token")||"";
+let data=null;
+const fallback={heroDesc:"We Design • We Create • We Promote. Your Vision, Our Technology.",aboutText:"At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences.",established:"21/08/2026",founder:"Yeswanth",co:"Amar nadh",founderImg:"assets/founder.jpg",coImg:"assets/cofounder.jpg",services:[],projects:[],websitePrice:"₹10,000",thumbPrice:"₹150",wa:"9381262063",mail:"yeswanthram29@gmail.com",insta:"",instaLabel:"YH NEXORA TECHNOLOGIES"};
+async function api(body){const r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const j=await r.json();if(!r.ok)throw new Error(j.error||"Request failed");return j}
+async function login(){try{const j=await api({action:"login",email:email.value,password:password.value});token=j.token;sessionStorage.setItem("yhnexora_admin_token",token);showApp();await load()}catch(e){loginErr.textContent=e.message}}
+function logout(){sessionStorage.removeItem("yhnexora_admin_token");location.reload()}
+function tab(id,b){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active")}
+function toast(t){status.textContent=t;status.classList.add("show");setTimeout(()=>status.classList.remove("show"),1600)}
+async function load(){try{const r=await fetch(API,{cache:"no-store"});data=await r.json();render()}catch(e){data={...fallback};render()}}
+function compress(file,max=1000){return new Promise(res=>{if(!file)return res("");const img=new Image(),c=document.createElement("canvas");const rd=new FileReader();rd.onload=()=>{img.onload=()=>{let w=img.width,h=img.height;if(w>max){h=Math.round(h*max/w);w=max}c.width=w;c.height=h;c.getContext("2d").drawImage(img,0,0,w,h);res(c.toDataURL("image/jpeg",.78))};img.src=rd.result};rd.readAsDataURL(file)})}
+async function save(){try{
+if(founderImg.files[0])data.founderImg=await compress(founderImg.files[0]);
+if(coImg.files[0])data.coImg=await compress(coImg.files[0]);
+data.heroDesc=heroDesc.value;data.aboutText=aboutText.value;data.founder=founder.value;data.co=co.value;data.established=established.value;
+data.websitePrice=websitePrice.value;data.thumbPrice=thumbPrice.value;data.wa=wa.value;data.mail=mail.value;data.insta=insta.value;data.instaLabel=instaLabel.value;
+await api({action:"save",token,data});toast("Updated successfully ✓");render()
+}catch(e){alert(e.message)}}
+function addService(){const name=prompt("Service name");if(!name)return;data.services.push({name,icon:"✦",desc:"",details:"",showContact:false,images:[]});render();save()}
+function editService(i){const s=data.services[i];s.name=prompt("Service name",s.name)||s.name;s.desc=prompt("Short description",s.desc)||s.desc;s.details=prompt("Full details",s.details)||s.details;s.showContact=confirm("Show Contact / Email / WhatsApp buttons for this service?");render();save()}
+function delService(i){if(confirm("Delete this service?")){data.services.splice(i,1);save()}}
+function addProject(){const name=prompt("Project name");if(!name)return;data.projects.push({name,desc:"",tags:"HTML • CSS • JavaScript",img:"portfolio/website-project.svg"});render();save()}
+function editProject(i){const p=data.projects[i];p.name=prompt("Project name",p.name)||p.name;p.desc=prompt("Description",p.desc)||p.desc;p.tags=prompt("Tags",p.tags)||p.tags;save()}
+async function uploadProject(i,input){if(!input.files[0])return;data.projects[i].img=await compress(input.files[0]);await save()}
+function render(){
+ heroDesc.value=data.heroDesc||"";aboutText.value=data.aboutText||"";founder.value=data.founder||"";co.value=data.co||"";established.value=data.established||"21/08/2026";
+ websitePrice.value=data.websitePrice||"₹10,000";thumbPrice.value=data.thumbPrice||"₹150";wa.value=data.wa||"9381262063";mail.value=data.mail||"";insta.value=data.insta||"";instaLabel.value=data.instaLabel||"YH NEXORA TECHNOLOGIES";
+ founderPreview.src=data.founderImg||"assets/founder.jpg";coPreview.src=data.coImg||"assets/cofounder.jpg";
+ serviceList.innerHTML=(data.services||[]).map((s,i)=>`<div class="item"><b>${esc(s.name)}</b><small>${esc(s.desc)}<br><strong>Contact buttons: ${s.showContact?"ON":"OFF"}</strong></small><div class="row"><button class="btn" onclick="editService(${i})">Edit</button><button class="btn danger" onclick="delService(${i})">Delete</button></div></div>`).join("");
+ projectList.innerHTML=(data.projects||[]).map((p,i)=>`<div class="item"><b>${esc(p.name)}</b><small>${esc(p.desc)}<br>${esc(p.tags||"")}</small><img class="preview" src="${esc(p.img||"portfolio/website-project.svg")}"><div class="row"><button class="btn" onclick="editProject(${i})">Edit Text</button><label class="btn">Replace Image <input style="display:none" type="file" accept="image/*" onchange="uploadProject(${i},this)"></label><button class="btn danger" onclick="data.projects.splice(${i},1);save()">Delete</button></div></div>`).join("");
 }
-
-
-/* LOGOUT */
-
-function logout(){
-
-    document.getElementById("adminPage")
-    .classList.add("hidden");
-
-    document.getElementById("loginPage")
-    .classList.remove("hidden");
-
-    document.getElementById("email").value="";
-    document.getElementById("password").value="";
-
-}
-
-
-/* IMAGE UPLOAD */
-
-function uploadImage(event,type){
-
-    const file = event.target.files[0];
-
-    if(!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = function(e){
-
-        localStorage.setItem(
-            type+"Image",
-            e.target.result
-        );
-
-        document.getElementById(
-            type+"Preview"
-        ).src = e.target.result;
-
-    };
-
-    reader.readAsDataURL(file);
-
-}
-
-
-/* SAVE DATA */
-
-function saveData(){
-
-    const fields = [
-
-        "companyName",
-        "tagline",
-        "establishment",
-        "location",
-
-        "founderName",
-        "cofounderName",
-
-        "aboutText",
-
-        "service1",
-        "service1Desc",
-        "service2",
-        "service2Desc",
-        "service3",
-        "service3Desc",
-
-        "clients",
-        "projects",
-        "minds",
-        "dreams",
-
-        "websitePrice",
-        "thumbnailPrice",
-
-        "whatsapp",
-        "contactEmail",
-        "instagram",
-
-        "portfolioName",
-        "portfolioDescription",
-        "portfolioStatus",
-
-        "founderQuote"
-
-    ];
-
-    fields.forEach(function(id){
-
-        const element =
-        document.getElementById(id);
-
-        localStorage.setItem(
-            id,
-            element.value
-        );
-
-    });
-
-    showStatus();
-
-}
-
-
-/* LOAD DATA */
-
-function loadData(){
-
-    const fields = [
-
-        "companyName",
-        "tagline",
-        "establishment",
-        "location",
-
-        "founderName",
-        "cofounderName",
-
-        "aboutText",
-
-        "service1",
-        "service1Desc",
-        "service2",
-        "service2Desc",
-        "service3",
-        "service3Desc",
-
-        "clients",
-        "projects",
-        "minds",
-        "dreams",
-
-        "websitePrice",
-        "thumbnailPrice",
-
-        "whatsapp",
-        "contactEmail",
-        "instagram",
-
-        "portfolioName",
-        "portfolioDescription",
-        "portfolioStatus",
-
-        "founderQuote"
-
-    ];
-
-    fields.forEach(function(id){
-
-        const value =
-        localStorage.getItem(id);
-
-        if(value !== null){
-
-            document.getElementById(id).value =
-            value;
-
-        }
-
-    });
-
-
-    const founder =
-    localStorage.getItem("founderImage");
-
-    if(founder){
-
-        document.getElementById(
-            "founderPreview"
-        ).src = founder;
-
-    }
-
-
-    const cofounder =
-    localStorage.getItem("cofounderImage");
-
-    if(cofounder){
-
-        document.getElementById(
-            "cofounderPreview"
-        ).src = cofounder;
-
-    }
-
-}
-
-
-/* STATUS */
-
-function showStatus(){
-
-    const status =
-    document.getElementById("status");
-
-    status.style.display="block";
-
-    setTimeout(function(){
-
-        status.style.display="none";
-
-    },2500);
-
-}
-
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function showApp(){document.getElementById("login").style.display="none";document.getElementById("app").style.display="block"}
+if(token){showApp();load()}else{}
 </script>
-
-</body>
-</html>
+</body></html>

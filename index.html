@@ -81,6 +81,14 @@ footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{
   .brandLogoImg{width:125px;height:41px}
   .heroLogo{width:205px;height:205px}
 }
+
+.serviceDetails{display:grid;gap:14px;margin-top:18px}
+.serviceDetails img{width:100%;max-height:280px;object-fit:cover;border-radius:16px;border:1px solid #ffffff14;background:#07152c}
+.portfolioVisual{width:100%;height:210px;object-fit:cover;border-radius:15px;margin-bottom:15px;border:1px solid #ffffff12;background:#06152b}
+.project{padding:15px;min-height:390px}
+.projectContent{padding:2px 8px 10px}
+.detailNote{color:#8fa0b8;font-size:10px;line-height:1.7;margin-top:10px}
+.adminFab{text-decoration:none;display:inline-flex;align-items:center}
 </style>
 </head>
 <body>
@@ -114,7 +122,7 @@ footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{
 </div>
 </section>
 
-<div class="stats"><div class="container statbar"><div class="stat"><b>2025</b><span>Established</span></div><div class="stat"><b>1</b><span>Featured Project</span></div><div class="stat"><b>2</b><span>Creative Minds</span></div><div class="stat"><b>∞</b><span>Big Dreams</span></div></div></div>
+<div class="stats"><div class="container statbar"><div class="stat"><b id="statEstablished">21/08/2026</b><span>Established</span></div><div class="stat"><b>1</b><span>Featured Project</span></div><div class="stat"><b>2</b><span>Creative Minds</span></div><div class="stat"><b>∞</b><span>Big Dreams</span></div></div></div>
 
 <section id="services">
 <div class="container">
@@ -127,10 +135,10 @@ footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{
 <div class="container">
 <div class="sectionHead"><div><div class="kicker">✦ Who We Are</div><h2>About <span>Us</span></h2></div><p>Ideas are only the beginning. We turn them into digital experiences.</p></div>
 <div class="aboutGrid">
-<div class="card"><div class="establishedBadge">✦ <span>Established</span><strong id="establishedDate">28/10/2025</strong></div><p class="aboutText" id="aboutText">At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics and run smart promotions to help your brand grow online.</p><div class="checks"><div class="check">Quality & Creativity</div><div class="check">24/7 Support</div><div class="check">On-Time Delivery</div><div class="check">Client Satisfaction</div></div></div>
+<div class="card"><div class="establishedBadge">✦ <span>Established</span><strong id="establishedDate">21/08/2026</strong></div><p class="aboutText" id="aboutText">At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics and run smart promotions to help your brand grow online.</p><div class="checks"><div class="check">Quality & Creativity</div><div class="check">24/7 Support</div><div class="check">On-Time Delivery</div><div class="check">Client Satisfaction</div></div></div>
 <div class="card"><div class="people">
-<div class="person"><div class="personPhoto" id="founderPhoto">Founder Photo</div><h3 id="founderName">Yeswanth</h3><small>FOUNDER</small></div>
-<div class="person"><div class="personPhoto" id="coPhoto">Co-Founder Photo</div><h3 id="coName">Amar nadh</h3><small>CO-FOUNDER</small></div>
+<div class="person"><div class="personPhoto" id="founderPhoto"><img src="assets/founder.jpg" alt="Founder Yeswanth"></div><h3 id="founderName">Yeswanth</h3><small>FOUNDER</small></div>
+<div class="person"><div class="personPhoto" id="coPhoto"><img src="assets/cofounder.jpg" alt="Co-Founder Amar nadh"></div><h3 id="coName">Amar nadh</h3><small>CO-FOUNDER</small></div>
 </div></div>
 </div>
 </div>
@@ -148,7 +156,7 @@ footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{
 <div class="sectionHead"><div><div class="kicker">✦ Simple Pricing</div><h2>Our <span>Pricing</span></h2></div><p>Affordable. Transparent. Worth it.</p></div>
 <div class="pricing">
 <div class="priceCard"><h3>Website Development</h3><div class="price" id="websitePrice">₹10,000</div><div class="priceList"><span>Responsive Design</span><span>SEO Optimized</span><span>Modern UI/UX</span><span>Free Support</span></div><br><button class="btn outline" onclick="openOrder('Website Development',db.websitePrice)">Get Started →</button></div>
-<div class="priceCard hot"><h3>YouTube Thumbnail</h3><div class="price" id="thumbPrice">₹300</div><div class="priceList"><span>Custom Design</span><span>Unlimited Revisions</span><span>Fast Delivery</span><span>Full HD Quality</span></div><br><button class="btn gold" onclick="openOrder('YouTube Thumbnail',db.thumbPrice)">Order Now →</button></div>
+<div class="priceCard hot"><h3>YouTube Thumbnail</h3><div class="price" id="thumbPrice">₹150</div><div class="priceList"><span>Custom Design</span><span>Unlimited Revisions</span><span>Fast Delivery</span><span>Full HD Quality</span></div><br><button class="btn gold" onclick="openOrder('YouTube Thumbnail',db.thumbPrice)">Order Now →</button></div>
 </div>
 </div>
 </section>
@@ -170,9 +178,9 @@ footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{
 </section>
 </main>
 
-<footer><div class="container footer"><div><div class="brandline">YH NEXORA TECHNOLOGIES</div><p>“Ideas Into Impact”</p></div><p>Made with ❤️ by YH NEXORA TECHNOLOGIES<br>© 2025–2026 All Rights Reserved.</p></div></footer>
+<footer><div class="container footer"><div><div class="brandline">YH NEXORA TECHNOLOGIES</div><p>“Ideas Into Impact”</p></div><p>Made with ❤️ by YH NEXORA TECHNOLOGIES<br>© 2026 All Rights Reserved.</p></div></footer>
 
-<button class="adminFab" onclick="openAdmin()">⚙ Admin</button>
+<a class="adminFab" href="admin.html">⚙ Admin</a>
 <button class="whatsapp" onclick="openWhatsApp()" title="WhatsApp">◉</button>
 
 
@@ -185,7 +193,7 @@ footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{
     </div>
     <div class="actionBody">
       <p id="actionText">Tell us what you need and we’ll help you turn the idea into a polished digital experience.</p>
-      <div class="detailGrid" id="actionDetails"></div>
+      <div class="detailGrid" id="actionDetails"></div><div class="serviceDetails" id="actionImages"></div>
       <div class="actionActions">
         <button class="btn gold" onclick="scrollToId('contact');closeAction()">Contact Us →</button>
         <button class="btn outline" onclick="openMail()">Send Email ✉</button>
@@ -195,130 +203,105 @@ footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{
   </div>
 </div>
 
-<div class="modal" id="adminModal">
-<div class="modalBox">
-<div class="modalHead"><div><div class="kicker">YH NEXORA</div><h2>Admin Control Center</h2></div><button class="close" onclick="closeAdmin()">×</button></div>
-<div id="loginPanel">
-<div class="loginBox"><h2>Admin Login 👑</h2><p style="color:#8998ae;font-size:11px;margin:7px 0 18px">Manage website content, people, projects, pricing and contact details.</p>
-<label style="font-size:11px">Email</label><input id="adminEmail" class="field" type="email" placeholder="Admin email">
-<label style="font-size:11px">Password</label><input id="adminPassword" class="field" type="password" placeholder="Password">
-<div id="loginError" class="error"></div><button class="btn save" style="width:100%" onclick="adminLogin()">Login to Admin →</button></div>
-</div>
-<div id="dashboardPanel" style="display:none">
-<div class="adminGrid">
-<div class="adminNav">
-<button class="active" onclick="adminTab('aHome',this)">⌂ Home</button><button onclick="adminTab('aAbout',this)">◎ People</button><button onclick="adminTab('aServices',this)">✦ Services</button><button onclick="adminTab('aPortfolio',this)">▣ Portfolio</button><button onclick="adminTab('aPricing',this)">₹ Pricing</button><button onclick="adminTab('aContact',this)">✉ Contact</button><button onclick="adminLogout()">↪ Logout</button>
-</div>
-<div>
-<div class="adminPage active" id="aHome"><div class="adminCards"><div class="adminCard"><h3>Home Content</h3><label style="font-size:10px">Hero Description</label><textarea id="aHeroDesc" class="field" rows="5"></textarea><button class="btn save" onclick="saveHero()">Save Home</button></div><div class="adminCard"><h3>Hero Image</h3><div class="upload">Upload your hero image<input id="heroUpload" type="file" accept="image/*"></div><div id="heroUploadStatus" style="font-size:9px;color:#71829a;margin-top:8px"></div></div></div></div>
-
-<div class="adminPage" id="aAbout"><div class="adminCards">
-<div class="adminCard"><h3>Founder — Yeswanth</h3><input id="aFounderName" class="field"><div class="upload">Upload Founder Photo<input id="founderUpload" type="file" accept="image/*"></div><button class="btn save" style="margin-top:9px" onclick="saveFounder()">Save Founder</button></div>
-<div class="adminCard"><h3>Co-Founder — Amar nadh</h3><input id="aCoName" class="field"><div class="upload">Upload Co-Founder Photo<input id="coUpload" type="file" accept="image/*"></div><button class="btn save" style="margin-top:9px" onclick="saveCo()">Save Co-Founder</button></div>
-<div class="adminCard full"><h3>About & Established</h3><label style="font-size:10px">Established Date / Year</label><input id="aEstablished" class="field"><label style="font-size:10px">About Text</label><textarea id="aAboutText" class="field" rows="5"></textarea><button class="btn save" onclick="saveAbout()">Save About</button></div>
-</div></div>
-
-<div class="adminPage" id="aServices"><div class="adminCard"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Services</h3><button class="btn save tiny" onclick="addService()">＋ Add</button></div><div class="adminList" id="adminServices"></div></div></div>
-
-<div class="adminPage" id="aPortfolio"><div class="adminCard"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Portfolio Projects</h3><button class="btn save tiny" onclick="addProject()">＋ Add</button></div><div class="adminList" id="adminProjects"></div></div></div>
-
-<div class="adminPage" id="aPricing"><div class="adminCards"><div class="adminCard"><h3>Website Starting Price</h3><input id="aWebsitePrice" class="field"><button class="btn save" onclick="savePricing()">Save</button></div><div class="adminCard"><h3>Thumbnail Price</h3><input id="aThumbPrice" class="field"><button class="btn save" onclick="savePricing()">Save</button></div></div></div>
-
-<div class="adminPage" id="aContact"><div class="adminCard"><h3>Contact Details</h3><label style="font-size:10px">WhatsApp ID</label><input id="aWa" class="field"><label style="font-size:10px">Email</label><input id="aMail" class="field"><label style="font-size:10px">Instagram</label><input id="aInsta" class="field"><button class="btn save" onclick="saveContact()">Save Contact</button></div></div>
-</div></div>
-</div>
-</div>
-</div>
-
 <div class="toast" id="toast">Saved ✓</div>
 
+
 <script>
-const KEY="YH_NEXORA_COMPLETE_V3";
-let db=JSON.parse(localStorage.getItem(KEY)||"null")||{
-heroDesc:"We Design • We Create • We Promote. Your Vision, Our Technology. We build modern websites, creative designs and digital promotions that help brands grow online.",
-aboutText:"At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics and run smart promotions to help your brand grow online.",
-established:"28/10/2025",founder:"Yeswanth",co:"Amar nadh",founderImg:"",coImg:"",
-services:[
-{name:"Website Development",icon:"</>",desc:"Modern, Responsive & High-Performance Websites for Your Business."},
-{name:"Graphic Design",icon:"✦",desc:"Logos, Banners, Posters, Social Media Designs & More."},
-{name:"Digital Promotions",icon:"📣",desc:"Social Media Marketing, Branding, Promotion & Growth."}
-],
-projects:[{name:"Love Proposal Website 💗",desc:"Interactive Love Proposal Website with Animations, Music & No Button Escape 😄",tags:"HTML • CSS • JavaScript"}],
-websitePrice:"₹10,000",thumbPrice:"₹300",wa:"@yeswanth5436",mail:"yeswanthram29@gmail.com",insta:"YH NEXORA TECHNOLOGIES / YH AI TECH INDIA"
+const API="/.netlify/functions/site-data";
+const FALLBACK={
+ heroDesc:"We Design • We Create • We Promote. Your Vision, Our Technology. We build modern websites, creative designs and digital promotions that help brands grow online.",
+ aboutText:"At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics and run smart promotions to help your brand grow online.",
+ established:"21/08/2026",founder:"Yeswanth",co:"Amar nadh",
+ founderImg:"assets/founder.jpg",coImg:"assets/cofounder.jpg",
+ services:[
+  {name:"Website Development",icon:"</>",desc:"Modern, responsive and high-performance websites for businesses.",details:"Professional business websites, landing pages and portfolio websites with responsive UI, modern animations, SEO-ready structure and fast-loading layouts.",showContact:false,images:["portfolio/website-project.svg"]},
+  {name:"Graphic Design",icon:"✦",desc:"Creative visual designs for brands, creators and businesses.",details:"YouTube thumbnails, Instagram posts, brochures, roll-up stands, visiting cards, posters and promotional creatives designed for digital and print.",showContact:false,images:["portfolio/youtube-thumbnail.svg","portfolio/instagram-post.svg","portfolio/brochure.svg","portfolio/rollup.svg","portfolio/visiting-card.svg"]},
+  {name:"Digital Promotions",icon:"📣",desc:"Social media promotion, branding and digital growth support.",details:"Social media campaign planning, promotional creatives, branding support and growth-focused digital promotions.",showContact:true,images:["portfolio/digital-promotion.svg"]}
+ ],
+ projects:[
+  {name:"Love Proposal Website 💗",desc:"Interactive romantic website concept with animated visuals, music-ready sections and responsive design.",tags:"HTML • CSS • JavaScript",img:"portfolio/love-proposal.svg"},
+  {name:"Business Website Concept",desc:"Modern premium business website concept for a digital brand.",tags:"Responsive • UI/UX • SEO",img:"portfolio/website-project.svg"}
+ ],
+ websitePrice:"₹10,000",thumbPrice:"₹150",wa:"9381262063",mail:"yeswanthram29@gmail.com",insta:"",instaLabel:"YH NEXORA TECHNOLOGIES"
 };
-if(!db.established||db.established==="2025")db.established="28/10/2025";
-function saveDB(){localStorage.setItem(KEY,JSON.stringify(db));showToast("Updated successfully ✓");renderSite();renderAdmin();}
+let db={...FALLBACK};
+
+async function loadDB(){
+ try{
+  const r=await fetch(API,{cache:"no-store"});
+  if(r.ok){const remote=await r.json(); db={...FALLBACK,...remote};}
+ }catch(e){console.log("Using fallback data",e)}
+ renderSite();
+}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function scrollToId(id){document.getElementById(id)?.scrollIntoView({behavior:"smooth"})}
 function showToast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1800)}
-function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
-function openAction(title,text,kicker,details){
-  document.getElementById("actionTitle").textContent=title||"Let’s Build Something Amazing";
-  document.getElementById("actionText").textContent=text||"Tell us what you need and we’ll help you turn the idea into a polished digital experience.";
-  document.getElementById("actionKicker").textContent=kicker||"YH NEXORA";
-  document.getElementById("actionDetails").innerHTML=(details||[]).map(d=>`<div class="detailBox"><small>${esc(d[0])}</small><b>${esc(d[1])}</b></div>`).join("");
-  document.getElementById("actionModal").classList.add("show");
+
+function openAction(title,text,kicker,details,showContact=true,images=[]){
+ document.getElementById("actionTitle").textContent=title||"Let's Build Something Amazing";
+ document.getElementById("actionText").textContent=text||"Tell us what you need and we'll help you turn the idea into a polished digital experience.";
+ document.getElementById("actionKicker").textContent=kicker||"YH NEXORA";
+ document.getElementById("actionDetails").innerHTML=(details||[]).map(d=>`<div class="detailBox"><small>${esc(d[0])}</small><b>${esc(d[1])}</b></div>`).join("");
+ const imgBox=document.getElementById("actionImages");
+ if(imgBox) imgBox.innerHTML=(images||[]).map(src=>`<img src="${esc(src)}" alt="${esc(title)}">`).join("");
+ const actions=document.getElementById("actionActions");
+ actions.innerHTML=showContact
+ ? `<button class="btn gold" onclick="scrollToId('contact');closeAction()">Contact Us →</button><button class="btn outline" onclick="openMail()">Send Email ✉</button><button class="btn outline" onclick="openWhatsApp()">WhatsApp ↗</button>`
+ : `<div class="detailNote">For this service, contact buttons are intentionally hidden here. Use the main Contact section when you are ready.</div>`;
+ document.getElementById("actionModal").classList.add("show");
 }
 function closeAction(){document.getElementById("actionModal").classList.remove("show")}
 function openService(i){
-  const s=db.services[i]; if(!s)return;
-  openAction(s.name,s.desc+" We can discuss your exact requirement, design direction, delivery scope and next steps.", "SERVICE • YH NEXORA", [["Service",s.name],["Best for","Businesses, creators & brands"],["Next step","Contact us for a custom quote"]]);
+ const s=db.services[i]; if(!s)return;
+ openAction(s.name,s.details||s.desc,"SERVICE • YH NEXORA",
+  [["Service",s.name],["Delivery","Professional design & development"],["Best for","Businesses, creators & brands"]],
+  !!s.showContact,s.images||[]);
 }
 function openProject(i){
-  const p=db.projects[i]; if(!p)return;
-  openAction(p.name,p.desc+" This portfolio item is a featured YH NEXORA concept. Click Contact Us to discuss a similar project or a custom version.", "PORTFOLIO • PROJECT", [["Project",p.name],["Tech",p.tags||"HTML • CSS • JavaScript"],["Availability","Custom project requests open"]]);
+ const p=db.projects[i]; if(!p)return;
+ openAction(p.name,p.desc,"PORTFOLIO • PROJECT",
+  [["Project",p.name],["Tech",p.tags||"HTML • CSS • JavaScript"],["Status","Available for custom projects"]],
+  true,p.img?[p.img]:[]);
 }
 function openOrder(name,price){
-  openAction("Start Your Project",`You selected ${name}. ${price?("Starting price: "+price+". "):""}Send us your requirement and we’ll discuss the design, features and delivery.`, "GET STARTED • YH NEXORA", [["Selected",name],["Starting Price",price||"Custom quote"],["Contact","WhatsApp / Email"]]);
+ openAction("Start Your Project",`You selected ${name}. ${price?("Starting price: "+price+". "):""}Tell us your requirement and we'll discuss the scope, design and delivery.`,
+ "GET STARTED • YH NEXORA",[["Selected",name],["Starting Price",price||"Custom quote"]],true,[]);
 }
 function openMail(){window.location.href="mailto:"+db.mail+"?subject="+encodeURIComponent("Project enquiry — YH NEXORA TECHNOLOGIES")}
-function copyWhatsApp(){navigator.clipboard?.writeText(db.wa).then(()=>showToast("WhatsApp ID copied ✓")).catch(()=>showToast("WhatsApp ID: "+db.wa))}
+function openWhatsApp(){
+ const num=String(db.wa||"9381262063").replace(/\D/g,"");
+ window.open("https://wa.me/91"+num+"?text="+encodeURIComponent("Hello YH NEXORA TECHNOLOGIES, I want to start a project."),"_blank");
+}
+function copyWhatsApp(){navigator.clipboard?.writeText(db.wa).then(()=>showToast("WhatsApp number copied ✓")).catch(()=>showToast("WhatsApp: "+db.wa))}
+function toggleTheme(){document.body.style.filter=document.body.style.filter?"":"brightness(1.12)}
 
-function openWhatsApp(){window.open("https://wa.me/919999999999?text="+encodeURIComponent("Hello YH NEXORA TECHNOLOGIES, I want to start a project."),"_blank")}
-function toggleTheme(){document.body.style.filter=document.body.style.filter?"":"brightness(1.12)"}
-function openAdmin(){document.getElementById("adminModal").classList.add("show")}
-function closeAdmin(){document.getElementById("adminModal").classList.remove("show")}
-function adminLogin(){
- const e=document.getElementById("adminEmail").value,p=document.getElementById("adminPassword").value;
- if(e==="yhnexora@ai.com"&&p==="yhnexora5436@"){document.getElementById("loginPanel").style.display="none";document.getElementById("dashboardPanel").style.display="block";fillAdmin()}
- else document.getElementById("loginError").textContent="Invalid admin email or password."
-}
-function adminLogout(){document.getElementById("dashboardPanel").style.display="none";document.getElementById("loginPanel").style.display="block";document.getElementById("adminEmail").value="";document.getElementById("adminPassword").value=""}
-function adminTab(id,btn){document.querySelectorAll(".adminPage").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".adminNav button").forEach(x=>x.classList.remove("active"));btn.classList.add("active")}
-function readImage(file,cb){if(!file)return;const r=new FileReader();r.onload=()=>cb(r.result);r.readAsDataURL(file)}
-function saveHero(){db.heroDesc=document.getElementById("aHeroDesc").value;saveDB()}
-function saveFounder(){db.founder=document.getElementById("aFounderName").value;saveDB()}
-function saveCo(){db.co=document.getElementById("aCoName").value;saveDB()}
-function saveAbout(){db.established=document.getElementById("aEstablished").value;db.aboutText=document.getElementById("aAboutText").value;saveDB()}
-function savePricing(){db.websitePrice=document.getElementById("aWebsitePrice").value;db.thumbPrice=document.getElementById("aThumbPrice").value;saveDB()}
-function saveContact(){db.wa=document.getElementById("aWa").value;db.mail=document.getElementById("aMail").value;db.insta=document.getElementById("aInsta").value;saveDB()}
-function addService(){let n=prompt("Service name");if(!n)return;let d=prompt("Description")||"";db.services.push({name:n,icon:"✦",desc:d});saveDB()}
-function editService(i){let n=prompt("Service name",db.services[i].name);if(n===null)return;let d=prompt("Description",db.services[i].desc);db.services[i].name=n;db.services[i].desc=d??db.services[i].desc;saveDB()}
-function delService(i){if(confirm("Delete service?")){db.services.splice(i,1);saveDB()}}
-function addProject(){let n=prompt("Project name");if(!n)return;let d=prompt("Description")||"";let t=prompt("Tags","HTML • CSS • JavaScript")||"";db.projects.push({name:n,desc:d,tags:t});saveDB()}
-function editProject(i){let n=prompt("Project name",db.projects[i].name);if(n===null)return;let d=prompt("Description",db.projects[i].desc);db.projects[i].name=n;db.projects[i].desc=d??db.projects[i].desc;saveDB()}
-function delProject(i){if(confirm("Delete project?")){db.projects.splice(i,1);saveDB()}}
-function fillAdmin(){
-document.getElementById("aHeroDesc").value=db.heroDesc;document.getElementById("aFounderName").value=db.founder;document.getElementById("aCoName").value=db.co;
-document.getElementById("aEstablished").value=db.established;document.getElementById("aAboutText").value=db.aboutText;
-document.getElementById("aWebsitePrice").value=db.websitePrice;document.getElementById("aThumbPrice").value=db.thumbPrice;
-document.getElementById("aWa").value=db.wa;document.getElementById("aMail").value=db.mail;document.getElementById("aInsta").value=db.insta;renderAdmin()
-}
-function renderAdmin(){
-document.getElementById("adminServices").innerHTML=db.services.map((s,i)=>`<div class="adminItem"><div><b>${esc(s.name)}</b><span>${esc(s.desc)}</span></div><div><button class="btn tiny" onclick="editService(${i})">Edit</button> <button class="btn tiny" onclick="delService(${i})">Delete</button></div></div>`).join("");
-document.getElementById("adminProjects").innerHTML=db.projects.map((p,i)=>`<div class="adminItem"><div><b>${esc(p.name)}</b><span>${esc(p.desc)}</span></div><div><button class="btn tiny" onclick="editProject(${i})">Edit</button> <button class="btn tiny" onclick="delProject(${i})">Delete</button></div></div>`).join("")
-}
 function renderSite(){
-document.getElementById("heroDesc").textContent=db.heroDesc;document.getElementById("aboutText").textContent=db.aboutText;document.getElementById("establishedDate").textContent=db.established||"28/10/2025";document.getElementById("founderName").textContent=db.founder;document.getElementById("coName").textContent=db.co;
-document.getElementById("websitePrice").textContent=db.websitePrice;document.getElementById("thumbPrice").textContent=db.thumbPrice;document.getElementById("waText").textContent=db.wa;document.getElementById("mailText").textContent=db.mail;document.getElementById("instaText").textContent=db.insta;
-const fs=document.getElementById("founderPhoto"),cs=document.getElementById("coPhoto");
-fs.innerHTML=db.founderImg?`<img src="${db.founderImg}">`:"Founder Photo";cs.innerHTML=db.coImg?`<img src="${db.coImg}">`:"Co-Founder Photo";
-document.getElementById("serviceCards").innerHTML=db.services.map((s,i)=>`<div class="card"><div class="serviceIcon">${esc(s.icon)}</div><h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p><button class="learnBtn" onclick="openService(${i})">Learn More <span>→</span></button></div>`).join("");
-document.getElementById("portfolioGrid").innerHTML=db.projects.map((p,i)=>`<div class="card project ${i?'projectSmall':''}"><div class="projectImg"></div><div class="projectContent"><div class="kicker">PROJECT ${String(i+1).padStart(2,"0")}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="tags">${esc(p.tags||"HTML • CSS • JavaScript").split("•").map(x=>`<span class="tag">${esc(x.trim())}</span>`).join("")}</div><button class="btn outline" onclick="openProject(${i})">View Project →</button></div></div>`).join("")
+ document.getElementById("heroDesc").textContent=db.heroDesc;
+ document.getElementById("aboutText").textContent=db.aboutText;
+ document.getElementById("establishedDate").textContent=db.established||"21/08/2026";
+ document.getElementById("statEstablished").textContent=db.established||"21/08/2026";
+ document.getElementById("founderName").textContent=db.founder||"Yeswanth";
+ document.getElementById("coName").textContent=db.co||"Amar nadh";
+ document.getElementById("websitePrice").textContent=db.websitePrice||"₹10,000";
+ document.getElementById("thumbPrice").textContent=db.thumbPrice||"₹150";
+ document.getElementById("waText").textContent=db.wa||"9381262063";
+ document.getElementById("mailText").textContent=db.mail||"yeswanthram29@gmail.com";
+ document.getElementById("instaText").textContent=db.instaLabel||"Instagram";
+ const fs=document.getElementById("founderPhoto"),cs=document.getElementById("coPhoto");
+ fs.innerHTML=db.founderImg?`<img src="${esc(db.founderImg)}" alt="Founder ${esc(db.founder)}">`:`<img src="assets/founder.jpg" alt="Founder">`;
+ cs.innerHTML=db.coImg?`<img src="${esc(db.coImg)}" alt="Co-Founder ${esc(db.co)}">`:`<img src="assets/cofounder.jpg" alt="Co-Founder">`;
+ document.getElementById("serviceCards").innerHTML=(db.services||[]).map((s,i)=>`
+  <div class="card"><div class="serviceIcon">${esc(s.icon)}</div><h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p>
+  <button class="learnBtn" onclick="openService(${i})">More Details <span>→</span></button></div>`).join("");
+ document.getElementById("portfolioGrid").innerHTML=(db.projects||[]).map((p,i)=>`
+  <div class="card project ${i?'projectSmall':''}"><div class="projectContent">
+  <img class="portfolioVisual" src="${esc(p.img||"portfolio/website-project.svg")}" alt="${esc(p.name)}">
+  <div class="kicker">PROJECT ${String(i+1).padStart(2,"0")}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p>
+  <div class="tags">${esc(p.tags||"HTML • CSS • JavaScript").split("•").map(x=>`<span class="tag">${esc(x.trim())}</span>`).join("")}</div>
+  <button class="btn outline" onclick="openProject(${i})">View Project →</button></div></div>`).join("");
 }
-function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-document.getElementById("founderUpload").onchange=e=>readImage(e.target.files[0],x=>{db.founderImg=x;saveDB()});
-document.getElementById("coUpload").onchange=e=>readImage(e.target.files[0],x=>{db.coImg=x;saveDB()});
-document.getElementById("heroUpload").onchange=e=>readImage(e.target.files[0],x=>{db.heroImg=x;document.getElementById("heroUploadStatus").textContent="Hero image uploaded ✓";saveDB()});
-renderSite();
+loadDB();
+setInterval(loadDB,30000);
 </script>
 </body>
 </html>
