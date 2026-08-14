@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#030816">
+<title>YH NEXORA TECHNOLOGIES | Ideas Into Impact</title>
+<style>
+:root{
+ --bg:#020713;--bg2:#061329;--card:#07172f;--card2:#0a1d3d;
+ --gold:#ffbf16;--gold2:#ff8d00;--cyan:#00c8ff;--blue:#126dff;
+ --purple:#a62cff;--pink:#ff31c8;--green:#18e979;--text:#f7f9ff;--muted:#9aaac4;
+ --line:rgba(0,194,255,.24);--shadow:0 24px 80px rgba(0,0,0,.42)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:
+ radial-gradient(circle at 8% 0,#163b70 0,transparent 28%),
+ radial-gradient(circle at 94% 16%,#35115e 0,transparent 30%),
+ radial-gradient(circle at 45% 75%,#062b49 0,transparent 30%),var(--bg);
+ color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.glow{position:fixed;pointer-events:none;border-radius:50%;filter:blur(70px);opacity:.22;z-index:-1}
+.g1{width:330px;height:330px;background:#00bfff;left:-170px;top:25%}.g2{width:300px;height:300px;background:#a62cff;right:-160px;top:55%}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(2,7,19,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.09)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.3px}
+.logoMark{width:47px;height:47px;border-radius:14px;display:grid;place-items:center;position:relative;color:var(--gold);font-size:18px;font-weight:1000;border:1px solid #ffc21c80;background:linear-gradient(145deg,#162b50,#250d45);box-shadow:0 0 28px #ffc21c1f}
+.logoMark:before{content:"";position:absolute;width:8px;height:22px;top:5px;border-left:3px solid #fff;border-right:3px solid #fff;border-radius:3px;transform:skew(-6deg)}
+.logoMark:after{content:"";position:absolute;top:3px;width:4px;height:4px;background:#ff3b32;border-radius:50%}
+.logoText{font-size:15px}.logoText small{display:block;font-size:7px;letter-spacing:3px;color:#aebbd0;margin-top:2px}
+nav{display:flex;align-items:center;gap:27px}nav a{font-size:13px;color:#dbe3f2;transition:.2s}nav a:hover,nav a.active{color:var(--gold)}
+.navActions{display:flex;gap:9px;align-items:center}.iconBtn{width:39px;height:39px;border:1px solid #ffffff18;border-radius:50%;background:#ffffff06;color:#fff;display:grid;place-items:center;cursor:pointer}.cta{border:0;border-radius:999px;padding:11px 19px;background:linear-gradient(135deg,#00cfff,#126dff);color:white;font-weight:850;box-shadow:0 0 25px #007bff35;cursor:pointer}
+.menu{display:none}
+section{padding:92px 0;position:relative}
+.hero{padding-top:150px;min-height:720px;display:flex;align-items:center;overflow:hidden}
+.heroGrid{display:grid;grid-template-columns:1.03fr .97fr;gap:35px;align-items:center}
+.eyebrow{color:#b9c6db;font-size:14px;font-weight:750}.eyebrow span{color:var(--gold)}
+.hero h1{font-size:clamp(50px,7vw,92px);line-height:.92;margin:12px 0 18px;font-weight:1000;letter-spacing:-4px}
+.gradient{background:linear-gradient(90deg,#ffc21c,#fff,#00c8ff,#a62cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.script{font-size:clamp(28px,4vw,48px);font-weight:800;font-style:italic;color:#fff}.script i{color:var(--gold)}
+.hero p{max-width:650px;color:#aab8ce;line-height:1.75;margin:18px 0 25px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}.btn{border:1px solid #ffffff18;border-radius:12px;padding:13px 20px;background:#ffffff08;color:#fff;font-weight:850;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.gold{background:linear-gradient(135deg,#ffc21c,#ff8a00);color:#08101d;border:0}.outline{border-color:#00bfff88;background:#00bfff09}
+.heroVisual{min-height:470px;display:grid;place-items:center;position:relative}
+.orbit{width:min(430px,80vw);aspect-ratio:1;border-radius:50%;border:1px solid #00c8ff44;box-shadow:0 0 90px #006cff24,inset 0 0 80px #007cff12;display:grid;place-items:center;position:relative}
+.orbit:before,.orbit:after{content:"";position:absolute;inset:25px;border:1px solid #ffc21c38;border-radius:50%;transform:rotate(20deg) scaleX(1.35)}.orbit:after{inset:55px;border-color:#a62cff42;transform:rotate(-28deg) scaleX(1.25)}
+.heroLogo{width:230px;height:230px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#1c355b,#060d1e 70%);border:1px solid #ffc21c88;box-shadow:0 0 70px #006dff42,0 0 25px #ffc21c35}.heroLogo strong{font-size:82px;color:var(--gold);text-shadow:0 0 30px #ffc21c55}.heroLogo small{position:absolute;margin-top:130px;letter-spacing:6px;font-size:12px}
+.floating{position:absolute;padding:12px 16px;border:1px solid #00c8ff44;background:#06172fe8;backdrop-filter:blur(14px);border-radius:14px;font-size:11px;box-shadow:var(--shadow)}.f1{top:10%;left:0}.f2{bottom:11%;right:0}.f3{top:16%;right:-10px;color:#ffc21c}
+.stats{margin-top:-45px;position:relative;z-index:2}.statbar{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #168dff66;border-radius:17px;background:#06142bd9;backdrop-filter:blur(15px);box-shadow:0 20px 60px #0007;overflow:hidden}.stat{padding:20px;text-align:center;border-right:1px solid #ffffff10}.stat:last-child{border:0}.stat b{display:block;font-size:27px;color:var(--gold)}.stat span{font-size:10px;color:#9cabc1}
+.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}.kicker{color:var(--cyan);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.sectionHead h2{font-size:clamp(31px,4vw,46px);margin-top:5px}.sectionHead h2 span{color:var(--gold)}.sectionHead p{color:var(--muted);font-size:12px;max-width:430px;line-height:1.7}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{border:1px solid #148cff38;border-radius:20px;background:linear-gradient(145deg,#0a1d3beb,#061128ed);box-shadow:var(--shadow);padding:24px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:#00bfff18;filter:blur(30px);right:-40px;top:-50px}.serviceIcon{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:linear-gradient(145deg,#126dff,#8d20ff);box-shadow:0 12px 30px #006cff28;margin-bottom:17px}.card h3{font-size:19px}.card p{color:#9aaac4;font-size:12px;line-height:1.75;margin:9px 0 17px}.learn{color:#fff;font-size:12px;font-weight:850}.learn span{color:var(--cyan);margin-left:7px}
+.aboutGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:17px}.aboutText{font-size:14px;color:#b2bfd2;line-height:1.9}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}.check{font-size:11px;color:#d4dceb}.check::before{content:"✓";color:#0ff094;margin-right:8px;font-weight:900}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:14px}.person{border:1px solid #ffffff14;border-radius:20px;padding:14px;background:#07152c}.personPhoto{height:250px;border-radius:15px;overflow:hidden;background:linear-gradient(145deg,#102c51,#170b36);display:grid;place-items:center;color:#667891;font-size:12px}.personPhoto img{width:100%;height:100%;object-fit:cover}.person h3{margin:13px 3px 2px}.person small{color:var(--gold);font-weight:800}
+.portfolioGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:15px}.project{min-height:300px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(180deg,#07152d,#040b18);overflow:hidden}.projectImg{position:absolute;inset:0;opacity:.55;background:radial-gradient(circle at 50% 35%,#ff32c877,transparent 28%),linear-gradient(135deg,#1c0d45,#071b3a 60%,#02101d)}.projectContent{position:relative;z-index:1}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{font-size:9px;padding:6px 8px;border-radius:99px;background:#ffffff0b;border:1px solid #ffffff15;color:#c5d0e3}.projectSmall{min-height:145px}
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:15px}.priceCard{padding:27px;border-radius:22px;border:1px solid #00c8ff55;background:linear-gradient(145deg,#081b37,#050d1d)}.priceCard.hot{border-color:#ffbd1666;box-shadow:0 0 45px #ff9d0012}.price{font-size:38px;color:var(--gold);font-weight:1000;margin:8px 0 13px}.priceList{display:grid;gap:8px;color:#b4c1d4;font-size:11px}.priceList span::before{content:"✓";color:#19ea79;margin-right:8px}.priceCard.hot .priceList span::before{color:var(--gold)}
+.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contactItem{display:flex;align-items:center;gap:13px;padding:15px;border:1px solid #ffffff12;border-radius:14px;background:#ffffff04;margin-bottom:10px}.contactIcon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#0a7cff;color:#fff}.contactItem small{display:block;color:#8795ad;font-size:9px}.contactItem b{font-size:12px}
+footer{padding:30px 0;border-top:1px solid #ffffff12;background:#010611}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer p{font-size:10px;color:#7f8da3}.brandline{color:#ffc21c;font-weight:900}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:900;width:58px;height:58px;border-radius:50%;background:#19df70;color:#06120b;display:grid;place-items:center;font-size:25px;box-shadow:0 0 35px #18e97966;cursor:pointer;border:0}
+.adminFab{position:fixed;left:20px;bottom:20px;z-index:900;border:1px solid #00c8ff55;background:#06172ee8;color:#fff;padding:11px 14px;border-radius:99px;font-size:10px;font-weight:850;cursor:pointer}
+.modal{position:fixed;inset:0;background:#000b;backdrop-filter:blur(10px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalBox{width:min(980px,100%);max-height:90vh;overflow:auto;border:1px solid #168dff55;border-radius:22px;background:#061329;box-shadow:0 30px 100px #000d;padding:22px}.modalHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.close{border:0;background:#ffffff0b;color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer}.loginBox{width:min(430px,100%);margin:30px auto;padding:28px;border:1px solid #00c8ff55;border-radius:22px;background:#07152d}.field{width:100%;padding:13px 14px;background:#020915;border:1px solid #ffffff16;border-radius:11px;color:#fff;outline:0;margin:7px 0 13px}.field:focus{border-color:#00c8ff88}.error{color:#ff7188;font-size:11px;min-height:18px}
+.adminGrid{display:grid;grid-template-columns:210px 1fr;gap:15px}.adminNav{display:flex;flex-direction:column;gap:5px}.adminNav button{padding:11px;border:1px solid transparent;background:#ffffff05;color:#aab7cc;border-radius:10px;text-align:left;cursor:pointer;font-size:11px}.adminNav button.active,.adminNav button:hover{border-color:#00c8ff33;background:#00c8ff0c;color:#fff}.adminPage{display:none}.adminPage.active{display:block}.adminCards{display:grid;grid-template-columns:1fr 1fr;gap:13px}.adminCard{padding:18px;border:1px solid #ffffff12;border-radius:16px;background:#ffffff04}.adminCard.full{grid-column:1/-1}.adminCard h3{font-size:14px;margin-bottom:13px}.upload{border:1px dashed #00c8ff55;padding:18px;border-radius:12px;text-align:center;color:#8796ad;font-size:11px}.upload input{margin-top:10px;max-width:100%}.adminList{display:grid;gap:8px}.adminItem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:11px;border:1px solid #ffffff10;border-radius:11px}.adminItem b{font-size:11px}.adminItem span{display:block;color:#7e8ca2;font-size:9px;margin-top:3px}.tiny{padding:7px 9px!important;font-size:9px!important}.save{background:linear-gradient(135deg,#00cfff,#126dff);border:0;color:#fff}
+.toast{position:fixed;right:20px;top:90px;z-index:3000;padding:12px 16px;border-radius:12px;background:#09203c;border:1px solid #00c8ff66;transform:translateX(140%);transition:.25s;font-size:11px}.toast.show{transform:translateX(0)}
+
+.actionModalBox{width:min(720px,100%);border:1px solid #168dff66;border-radius:24px;background:linear-gradient(145deg,#091c38,#030a16);box-shadow:0 30px 100px #000;overflow:hidden}
+.actionHero{padding:28px;background:radial-gradient(circle at 80% 0,#35115e 0,transparent 42%),linear-gradient(135deg,#0a2346,#060d1c);border-bottom:1px solid #ffffff12}
+.actionHero .kicker{margin-bottom:7px}.actionHero h2{font-size:28px}.actionBody{padding:24px}.actionBody p{color:#aab8ce;line-height:1.8;font-size:12px}.actionActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.actionClose{position:absolute;right:18px;top:14px;border:0;background:#ffffff0b;color:#fff;width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer}
+.serviceIcon{position:relative}.learnBtn{border:1px solid #00bfff88;background:#00bfff09;color:#fff;border-radius:999px;padding:9px 14px;font-size:11px;font-weight:850;cursor:pointer}.learnBtn span{color:var(--cyan);margin-left:7px}
+.establishedBadge{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:17px;padding:11px 13px;border:1px solid #ffc21c38;border-radius:12px;background:#ffc21c08;font-size:11px}.establishedBadge:first-letter{color:var(--gold)}.establishedBadge span{color:#8e9db3}.establishedBadge strong{color:var(--gold);font-size:12px}
+.detailGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.detailBox{padding:14px;border:1px solid #ffffff12;border-radius:14px;background:#ffffff04}.detailBox small{display:block;color:#7e8ca2;font-size:9px;text-transform:uppercase;letter-spacing:1px}.detailBox b{display:block;margin-top:5px;font-size:12px}
+@media(max-width:600px){.detailGrid{grid-template-columns:1fr}}
+@media(max-width:900px){nav{display:none}.menu{display:block}.heroGrid,.aboutGrid,.portfolioGrid,.contactGrid{grid-template-columns:1fr}.heroVisual{min-height:390px}.cards3{grid-template-columns:1fr 1fr}.statbar{grid-template-columns:1fr 1fr}.adminGrid{grid-template-columns:1fr}.adminNav{flex-direction:row;overflow:auto}.adminNav button{white-space:nowrap}}
+@media(max-width:600px){section{padding:72px 0}.hero{padding-top:120px}.hero h1{letter-spacing:-2px}.cards3,.people,.pricing,.adminCards{grid-template-columns:1fr}.adminCard.full{grid-column:auto}.stat b{font-size:21px}.stat{padding:15px 8px}.nav{height:64px}.logoText{font-size:12px}.navActions .iconBtn{display:none}.cta{padding:9px 12px;font-size:10px}.heroVisual{min-height:330px}.heroLogo{width:170px;height:170px}.heroLogo strong{font-size:60px}.heroLogo small{margin-top:100px;font-size:8px}.floating{font-size:9px;padding:9px 11px}}
+</style>
+
+<style>
+.brandLogoImg{width:150px;height:48px;object-fit:contain;display:block}
+.heroLogo{width:270px;height:270px;display:grid;place-items:center}
+.heroLogo img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 34px rgba(0,200,255,.18))}
+@media(max-width:600px){
+  .brandLogoImg{width:125px;height:41px}
+  .heroLogo{width:205px;height:205px}
+}
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+
+<header>
+<div class="container nav">
+<a class="logo" href="#home"><img class="brandLogoImg" src="YH_NEXORA_NEW_LOGO.svg" alt="YH NEXORA TECHNOLOGIES"><div class="logoText">YH NEXORA<small>TECHNOLOGIES</small></div></a>
+<nav>
+<a href="#home" class="active">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+</nav>
+<div class="navActions"><button class="iconBtn" onclick="toggleTheme()">☼</button><button class="iconBtn">◎</button><button class="iconBtn">◉</button><button class="cta" onclick="openOrder('Website / Digital Service','Let’s discuss your requirement')">Get Started ↗</button></div>
+<button class="menu" onclick="document.querySelector('nav').style.display=document.querySelector('nav').style.display==='flex'?'none':'flex'">☰</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container heroGrid">
+<div>
+<div class="eyebrow">Hello, We're <span>👋</span></div>
+<h1><span class="gradient">YH NEXORA</span><br>TECHNOLOGIES</h1>
+<div class="script">“<i>Ideas</i> Into <i>Impact</i>”</div>
+<p id="heroDesc">We Design • We Create • We Promote. Your Vision, Our Technology. We build modern websites, creative designs and digital promotions that help brands grow online.</p>
+<div class="actions"><button class="btn gold" onclick="openOrder('Website / Digital Service','Let’s discuss your requirement')">Get Started ◉ →</button><button class="btn outline" onclick="scrollToId('portfolio')">View Portfolio ▶</button></div>
+</div>
+<div class="heroVisual">
+<div class="orbit"><div class="heroLogo"><img src="YH_NEXORA_NEW_LOGO.svg" alt="YH NEXORA TECHNOLOGIES"></div></div>
+<div class="floating f1">⚡ Creative Digital Solutions</div><div class="floating f2">🚀 Design • Develop • Deliver</div><div class="floating f3">∞ Big Dreams</div>
+</div>
+</div>
+</section>
+
+<div class="stats"><div class="container statbar"><div class="stat"><b>2025</b><span>Established</span></div><div class="stat"><b>1</b><span>Featured Project</span></div><div class="stat"><b>2</b><span>Creative Minds</span></div><div class="stat"><b>∞</b><span>Big Dreams</span></div></div></div>
+
+<section id="services">
+<div class="container">
+<div class="sectionHead"><div><div class="kicker">✦ What We Do</div><h2>Our <span>Services</span></h2></div><p>Everything you need to create, launch and grow your digital presence.</p></div>
+<div class="cards3" id="serviceCards"></div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="sectionHead"><div><div class="kicker">✦ Who We Are</div><h2>About <span>Us</span></h2></div><p>Ideas are only the beginning. We turn them into digital experiences.</p></div>
+<div class="aboutGrid">
+<div class="card"><div class="establishedBadge">✦ <span>Established</span><strong id="establishedDate">28/10/2025</strong></div><p class="aboutText" id="aboutText">At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics and run smart promotions to help your brand grow online.</p><div class="checks"><div class="check">Quality & Creativity</div><div class="check">24/7 Support</div><div class="check">On-Time Delivery</div><div class="check">Client Satisfaction</div></div></div>
+<div class="card"><div class="people">
+<div class="person"><div class="personPhoto" id="founderPhoto">Founder Photo</div><h3 id="founderName">Yeswanth</h3><small>FOUNDER</small></div>
+<div class="person"><div class="personPhoto" id="coPhoto">Co-Founder Photo</div><h3 id="coName">Amar nadh</h3><small>CO-FOUNDER</small></div>
+</div></div>
+</div>
+</div>
+</section>
+
+<section id="portfolio">
+<div class="container">
+<div class="sectionHead"><div><div class="kicker">✦ Selected Work</div><h2>Our <span>Portfolio</span></h2></div><p>Projects that speak louder than promises.</p></div>
+<div class="portfolioGrid" id="portfolioGrid"></div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<div class="sectionHead"><div><div class="kicker">✦ Simple Pricing</div><h2>Our <span>Pricing</span></h2></div><p>Affordable. Transparent. Worth it.</p></div>
+<div class="pricing">
+<div class="priceCard"><h3>Website Development</h3><div class="price" id="websitePrice">₹10,000</div><div class="priceList"><span>Responsive Design</span><span>SEO Optimized</span><span>Modern UI/UX</span><span>Free Support</span></div><br><button class="btn outline" onclick="openOrder('Website Development',db.websitePrice)">Get Started →</button></div>
+<div class="priceCard hot"><h3>YouTube Thumbnail</h3><div class="price" id="thumbPrice">₹300</div><div class="priceList"><span>Custom Design</span><span>Unlimited Revisions</span><span>Fast Delivery</span><span>Full HD Quality</span></div><br><button class="btn gold" onclick="openOrder('YouTube Thumbnail',db.thumbPrice)">Order Now →</button></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="sectionHead"><div><div class="kicker">✦ Let's Build</div><h2>Contact <span>Us</span></h2></div><p>Have an idea? Let's turn it into something amazing.</p></div>
+<div class="contactGrid">
+<div class="card">
+<div class="contactItem"><div class="contactIcon">◉</div><div><small>WhatsApp</small><b id="waText">@yeswanth5436</b></div></div>
+<div class="contactItem"><div class="contactIcon">✉</div><div><small>Email</small><b id="mailText">yeswanthram29@gmail.com</b></div></div>
+<div class="contactItem"><div class="contactIcon">◎</div><div><small>Instagram</small><b id="instaText">YH NEXORA TECHNOLOGIES / YH AI TECH INDIA</b></div></div>
+</div>
+<div class="card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+<div style="font-size:13px;color:#aebbd0">Ready to</div><h2 style="font-size:31px;margin:4px 0 8px">Start Your <span style="color:var(--gold)">Project?</span></h2><p>Let's turn your ideas into reality.</p><button class="btn gold" onclick="openWhatsApp()">Chat on WhatsApp ↗</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer"><div><div class="brandline">YH NEXORA TECHNOLOGIES</div><p>“Ideas Into Impact”</p></div><p>Made with ❤️ by YH NEXORA TECHNOLOGIES<br>© 2025–2026 All Rights Reserved.</p></div></footer>
+
+<button class="adminFab" onclick="openAdmin()">⚙ Admin</button>
+<button class="whatsapp" onclick="openWhatsApp()" title="WhatsApp">◉</button>
+
+
+<div class="modal" id="actionModal" onclick="if(event.target===this)closeAction()">
+  <div class="actionModalBox">
+    <div class="actionHero">
+      <button class="actionClose" onclick="closeAction()">×</button>
+      <div class="kicker" id="actionKicker">YH NEXORA</div>
+      <h2 id="actionTitle">Let’s Build Something Amazing</h2>
+    </div>
+    <div class="actionBody">
+      <p id="actionText">Tell us what you need and we’ll help you turn the idea into a polished digital experience.</p>
+      <div class="detailGrid" id="actionDetails"></div>
+      <div class="actionActions">
+        <button class="btn gold" onclick="scrollToId('contact');closeAction()">Contact Us →</button>
+        <button class="btn outline" onclick="openMail()">Send Email ✉</button>
+        <button class="btn outline" onclick="copyWhatsApp()">Copy WhatsApp ID</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="adminModal">
+<div class="modalBox">
+<div class="modalHead"><div><div class="kicker">YH NEXORA</div><h2>Admin Control Center</h2></div><button class="close" onclick="closeAdmin()">×</button></div>
+<div id="loginPanel">
+<div class="loginBox"><h2>Admin Login 👑</h2><p style="color:#8998ae;font-size:11px;margin:7px 0 18px">Manage website content, people, projects, pricing and contact details.</p>
+<label style="font-size:11px">Email</label><input id="adminEmail" class="field" type="email" placeholder="Admin email">
+<label style="font-size:11px">Password</label><input id="adminPassword" class="field" type="password" placeholder="Password">
+<div id="loginError" class="error"></div><button class="btn save" style="width:100%" onclick="adminLogin()">Login to Admin →</button></div>
+</div>
+<div id="dashboardPanel" style="display:none">
+<div class="adminGrid">
+<div class="adminNav">
+<button class="active" onclick="adminTab('aHome',this)">⌂ Home</button><button onclick="adminTab('aAbout',this)">◎ People</button><button onclick="adminTab('aServices',this)">✦ Services</button><button onclick="adminTab('aPortfolio',this)">▣ Portfolio</button><button onclick="adminTab('aPricing',this)">₹ Pricing</button><button onclick="adminTab('aContact',this)">✉ Contact</button><button onclick="adminLogout()">↪ Logout</button>
+</div>
+<div>
+<div class="adminPage active" id="aHome"><div class="adminCards"><div class="adminCard"><h3>Home Content</h3><label style="font-size:10px">Hero Description</label><textarea id="aHeroDesc" class="field" rows="5"></textarea><button class="btn save" onclick="saveHero()">Save Home</button></div><div class="adminCard"><h3>Hero Image</h3><div class="upload">Upload your hero image<input id="heroUpload" type="file" accept="image/*"></div><div id="heroUploadStatus" style="font-size:9px;color:#71829a;margin-top:8px"></div></div></div></div>
+
+<div class="adminPage" id="aAbout"><div class="adminCards">
+<div class="adminCard"><h3>Founder — Yeswanth</h3><input id="aFounderName" class="field"><div class="upload">Upload Founder Photo<input id="founderUpload" type="file" accept="image/*"></div><button class="btn save" style="margin-top:9px" onclick="saveFounder()">Save Founder</button></div>
+<div class="adminCard"><h3>Co-Founder — Amar nadh</h3><input id="aCoName" class="field"><div class="upload">Upload Co-Founder Photo<input id="coUpload" type="file" accept="image/*"></div><button class="btn save" style="margin-top:9px" onclick="saveCo()">Save Co-Founder</button></div>
+<div class="adminCard full"><h3>About & Established</h3><label style="font-size:10px">Established Date / Year</label><input id="aEstablished" class="field"><label style="font-size:10px">About Text</label><textarea id="aAboutText" class="field" rows="5"></textarea><button class="btn save" onclick="saveAbout()">Save About</button></div>
+</div></div>
+
+<div class="adminPage" id="aServices"><div class="adminCard"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Services</h3><button class="btn save tiny" onclick="addService()">＋ Add</button></div><div class="adminList" id="adminServices"></div></div></div>
+
+<div class="adminPage" id="aPortfolio"><div class="adminCard"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Portfolio Projects</h3><button class="btn save tiny" onclick="addProject()">＋ Add</button></div><div class="adminList" id="adminProjects"></div></div></div>
+
+<div class="adminPage" id="aPricing"><div class="adminCards"><div class="adminCard"><h3>Website Starting Price</h3><input id="aWebsitePrice" class="field"><button class="btn save" onclick="savePricing()">Save</button></div><div class="adminCard"><h3>Thumbnail Price</h3><input id="aThumbPrice" class="field"><button class="btn save" onclick="savePricing()">Save</button></div></div></div>
+
+<div class="adminPage" id="aContact"><div class="adminCard"><h3>Contact Details</h3><label style="font-size:10px">WhatsApp ID</label><input id="aWa" class="field"><label style="font-size:10px">Email</label><input id="aMail" class="field"><label style="font-size:10px">Instagram</label><input id="aInsta" class="field"><button class="btn save" onclick="saveContact()">Save Contact</button></div></div>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="toast" id="toast">Saved ✓</div>
+
+<script>
+const KEY="YH_NEXORA_COMPLETE_V3";
+let db=JSON.parse(localStorage.getItem(KEY)||"null")||{
+heroDesc:"We Design • We Create • We Promote. Your Vision, Our Technology. We build modern websites, creative designs and digital promotions that help brands grow online.",
+aboutText:"At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics and run smart promotions to help your brand grow online.",
+established:"28/10/2025",founder:"Yeswanth",co:"Amar nadh",founderImg:"",coImg:"",
+services:[
+{name:"Website Development",icon:"</>",desc:"Modern, Responsive & High-Performance Websites for Your Business."},
+{name:"Graphic Design",icon:"✦",desc:"Logos, Banners, Posters, Social Media Designs & More."},
+{name:"Digital Promotions",icon:"📣",desc:"Social Media Marketing, Branding, Promotion & Growth."}
+],
+projects:[{name:"Love Proposal Website 💗",desc:"Interactive Love Proposal Website with Animations, Music & No Button Escape 😄",tags:"HTML • CSS • JavaScript"}],
+websitePrice:"₹10,000",thumbPrice:"₹300",wa:"@yeswanth5436",mail:"yeswanthram29@gmail.com",insta:"YH NEXORA TECHNOLOGIES / YH AI TECH INDIA"
+};
+if(!db.established||db.established==="2025")db.established="28/10/2025";
+function saveDB(){localStorage.setItem(KEY,JSON.stringify(db));showToast("Updated successfully ✓");renderSite();renderAdmin();}
+function showToast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1800)}
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+function openAction(title,text,kicker,details){
+  document.getElementById("actionTitle").textContent=title||"Let’s Build Something Amazing";
+  document.getElementById("actionText").textContent=text||"Tell us what you need and we’ll help you turn the idea into a polished digital experience.";
+  document.getElementById("actionKicker").textContent=kicker||"YH NEXORA";
+  document.getElementById("actionDetails").innerHTML=(details||[]).map(d=>`<div class="detailBox"><small>${esc(d[0])}</small><b>${esc(d[1])}</b></div>`).join("");
+  document.getElementById("actionModal").classList.add("show");
+}
+function closeAction(){document.getElementById("actionModal").classList.remove("show")}
+function openService(i){
+  const s=db.services[i]; if(!s)return;
+  openAction(s.name,s.desc+" We can discuss your exact requirement, design direction, delivery scope and next steps.", "SERVICE • YH NEXORA", [["Service",s.name],["Best for","Businesses, creators & brands"],["Next step","Contact us for a custom quote"]]);
+}
+function openProject(i){
+  const p=db.projects[i]; if(!p)return;
+  openAction(p.name,p.desc+" This portfolio item is a featured YH NEXORA concept. Click Contact Us to discuss a similar project or a custom version.", "PORTFOLIO • PROJECT", [["Project",p.name],["Tech",p.tags||"HTML • CSS • JavaScript"],["Availability","Custom project requests open"]]);
+}
+function openOrder(name,price){
+  openAction("Start Your Project",`You selected ${name}. ${price?("Starting price: "+price+". "):""}Send us your requirement and we’ll discuss the design, features and delivery.`, "GET STARTED • YH NEXORA", [["Selected",name],["Starting Price",price||"Custom quote"],["Contact","WhatsApp / Email"]]);
+}
+function openMail(){window.location.href="mailto:"+db.mail+"?subject="+encodeURIComponent("Project enquiry — YH NEXORA TECHNOLOGIES")}
+function copyWhatsApp(){navigator.clipboard?.writeText(db.wa).then(()=>showToast("WhatsApp ID copied ✓")).catch(()=>showToast("WhatsApp ID: "+db.wa))}
+
+function openWhatsApp(){window.open("https://wa.me/919999999999?text="+encodeURIComponent("Hello YH NEXORA TECHNOLOGIES, I want to start a project."),"_blank")}
+function toggleTheme(){document.body.style.filter=document.body.style.filter?"":"brightness(1.12)"}
+function openAdmin(){document.getElementById("adminModal").classList.add("show")}
+function closeAdmin(){document.getElementById("adminModal").classList.remove("show")}
+function adminLogin(){
+ const e=document.getElementById("adminEmail").value,p=document.getElementById("adminPassword").value;
+ if(e==="yhnexora@ai.com"&&p==="yhnexora5436@"){document.getElementById("loginPanel").style.display="none";document.getElementById("dashboardPanel").style.display="block";fillAdmin()}
+ else document.getElementById("loginError").textContent="Invalid admin email or password."
+}
+function adminLogout(){document.getElementById("dashboardPanel").style.display="none";document.getElementById("loginPanel").style.display="block";document.getElementById("adminEmail").value="";document.getElementById("adminPassword").value=""}
+function adminTab(id,btn){document.querySelectorAll(".adminPage").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".adminNav button").forEach(x=>x.classList.remove("active"));btn.classList.add("active")}
+function readImage(file,cb){if(!file)return;const r=new FileReader();r.onload=()=>cb(r.result);r.readAsDataURL(file)}
+function saveHero(){db.heroDesc=document.getElementById("aHeroDesc").value;saveDB()}
+function saveFounder(){db.founder=document.getElementById("aFounderName").value;saveDB()}
+function saveCo(){db.co=document.getElementById("aCoName").value;saveDB()}
+function saveAbout(){db.established=document.getElementById("aEstablished").value;db.aboutText=document.getElementById("aAboutText").value;saveDB()}
+function savePricing(){db.websitePrice=document.getElementById("aWebsitePrice").value;db.thumbPrice=document.getElementById("aThumbPrice").value;saveDB()}
+function saveContact(){db.wa=document.getElementById("aWa").value;db.mail=document.getElementById("aMail").value;db.insta=document.getElementById("aInsta").value;saveDB()}
+function addService(){let n=prompt("Service name");if(!n)return;let d=prompt("Description")||"";db.services.push({name:n,icon:"✦",desc:d});saveDB()}
+function editService(i){let n=prompt("Service name",db.services[i].name);if(n===null)return;let d=prompt("Description",db.services[i].desc);db.services[i].name=n;db.services[i].desc=d??db.services[i].desc;saveDB()}
+function delService(i){if(confirm("Delete service?")){db.services.splice(i,1);saveDB()}}
+function addProject(){let n=prompt("Project name");if(!n)return;let d=prompt("Description")||"";let t=prompt("Tags","HTML • CSS • JavaScript")||"";db.projects.push({name:n,desc:d,tags:t});saveDB()}
+function editProject(i){let n=prompt("Project name",db.projects[i].name);if(n===null)return;let d=prompt("Description",db.projects[i].desc);db.projects[i].name=n;db.projects[i].desc=d??db.projects[i].desc;saveDB()}
+function delProject(i){if(confirm("Delete project?")){db.projects.splice(i,1);saveDB()}}
+function fillAdmin(){
+document.getElementById("aHeroDesc").value=db.heroDesc;document.getElementById("aFounderName").value=db.founder;document.getElementById("aCoName").value=db.co;
+document.getElementById("aEstablished").value=db.established;document.getElementById("aAboutText").value=db.aboutText;
+document.getElementById("aWebsitePrice").value=db.websitePrice;document.getElementById("aThumbPrice").value=db.thumbPrice;
+document.getElementById("aWa").value=db.wa;document.getElementById("aMail").value=db.mail;document.getElementById("aInsta").value=db.insta;renderAdmin()
+}
+function renderAdmin(){
+document.getElementById("adminServices").innerHTML=db.services.map((s,i)=>`<div class="adminItem"><div><b>${esc(s.name)}</b><span>${esc(s.desc)}</span></div><div><button class="btn tiny" onclick="editService(${i})">Edit</button> <button class="btn tiny" onclick="delService(${i})">Delete</button></div></div>`).join("");
+document.getElementById("adminProjects").innerHTML=db.projects.map((p,i)=>`<div class="adminItem"><div><b>${esc(p.name)}</b><span>${esc(p.desc)}</span></div><div><button class="btn tiny" onclick="editProject(${i})">Edit</button> <button class="btn tiny" onclick="delProject(${i})">Delete</button></div></div>`).join("")
+}
+function renderSite(){
+document.getElementById("heroDesc").textContent=db.heroDesc;document.getElementById("aboutText").textContent=db.aboutText;document.getElementById("establishedDate").textContent=db.established||"28/10/2025";document.getElementById("founderName").textContent=db.founder;document.getElementById("coName").textContent=db.co;
+document.getElementById("websitePrice").textContent=db.websitePrice;document.getElementById("thumbPrice").textContent=db.thumbPrice;document.getElementById("waText").textContent=db.wa;document.getElementById("mailText").textContent=db.mail;document.getElementById("instaText").textContent=db.insta;
+const fs=document.getElementById("founderPhoto"),cs=document.getElementById("coPhoto");
+fs.innerHTML=db.founderImg?`<img src="${db.founderImg}">`:"Founder Photo";cs.innerHTML=db.coImg?`<img src="${db.coImg}">`:"Co-Founder Photo";
+document.getElementById("serviceCards").innerHTML=db.services.map((s,i)=>`<div class="card"><div class="serviceIcon">${esc(s.icon)}</div><h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p><button class="learnBtn" onclick="openService(${i})">Learn More <span>→</span></button></div>`).join("");
+document.getElementById("portfolioGrid").innerHTML=db.projects.map((p,i)=>`<div class="card project ${i?'projectSmall':''}"><div class="projectImg"></div><div class="projectContent"><div class="kicker">PROJECT ${String(i+1).padStart(2,"0")}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="tags">${esc(p.tags||"HTML • CSS • JavaScript").split("•").map(x=>`<span class="tag">${esc(x.trim())}</span>`).join("")}</div><button class="btn outline" onclick="openProject(${i})">View Project →</button></div></div>`).join("")
+}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+document.getElementById("founderUpload").onchange=e=>readImage(e.target.files[0],x=>{db.founderImg=x;saveDB()});
+document.getElementById("coUpload").onchange=e=>readImage(e.target.files[0],x=>{db.coImg=x;saveDB()});
+document.getElementById("heroUpload").onchange=e=>readImage(e.target.files[0],x=>{db.heroImg=x;document.getElementById("heroUploadStatus").textContent="Hero image uploaded ✓";saveDB()});
+renderSite();
+</script>
+</body>
+</html>
