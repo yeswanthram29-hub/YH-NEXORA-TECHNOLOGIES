@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YH NEXORA | Admin</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#020817;
+    color:white;
+    min-height:100vh;
+}
+
+.hidden{
+    display:none!important;
+}
+
+/* LOGIN */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    radial-gradient(circle at top,#102b65,#020817 55%);
+    padding:20px;
+}
+
+.login-box{
+    width:400px;
+    max-width:100%;
+    background:rgba(5,15,38,.95);
+    border:1px solid #168cff;
+    border-radius:25px;
+    padding:40px 30px;
+    box-shadow:0 0 50px rgba(0,140,255,.25);
+    text-align:center;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.login-box h1{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.login-box h1 span{
+    color:#ffb300;
+}
+
+.login-box p{
+    color:#aaa;
+    margin-bottom:30px;
+}
+
+.input{
+    width:100%;
+    padding:15px;
+    margin:8px 0;
+    border-radius:10px;
+    border:1px solid #234d85;
+    background:#07142d;
+    color:white;
+    outline:none;
+}
+
+.input:focus{
+    border-color:#00aaff;
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(90deg,#ffad00,#ffcc33);
+    color:#111;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.error{
+    color:#ff5555;
+    margin-top:15px;
+    font-size:14px;
+}
+
+/* ADMIN */
+
+.admin{
+    min-height:100vh;
+}
+
+.topbar{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    background:#050d20;
+    border-bottom:1px solid #16477c;
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.topbar h2{
+    color:#fff;
+}
+
+.topbar h2 span{
+    color:#ffb300;
+}
+
+.logout{
+    background:#ff3344;
+    color:white;
+    border:0;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.welcome{
+    margin-bottom:25px;
+}
+
+.welcome h1{
+    font-size:32px;
+}
+
+.welcome span{
+    color:#ffb300;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#07142d;
+    border:1px solid #174f91;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.card.full{
+    grid-column:1/-1;
+}
+
+.card h2{
+    color:#ffb300;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    color:#bbb;
+    margin:14px 0 7px;
+}
+
+textarea,
+select{
+    width:100%;
+    padding:13px;
+    border-radius:9px;
+    border:1px solid #255b96;
+    background:#020b1e;
+    color:white;
+    outline:none;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.save-btn{
+    background:linear-gradient(90deg,#008cff,#00c6ff);
+    color:white;
+    border:0;
+    padding:14px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.image-box{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.preview{
+    width:130px;
+    height:130px;
+    border-radius:15px;
+    object-fit:cover;
+    border:2px solid #168cff;
+    background:#020817;
+}
+
+input[type="file"]{
+    color:#aaa;
+    width:100%;
+}
+
+.status{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#09b66d;
+    padding:14px 20px;
+    border-radius:10px;
+    display:none;
+}
+
+@media(max-width:800px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card.full{
+        grid-column:auto;
+    }
+
+    .topbar{
+        padding:0 15px;
+    }
+
+    .container{
+        padding:20px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<section id="loginPage" class="login-page">
+
+<div class="login-box">
+
+<img src="YH_NEXORA_NEW_LOGO.svg" class="logo">
+
+<h1>YH <span>NEXORA</span></h1>
+<p>Administrator Login</p>
+
+<input
+id="email"
+class="input"
+type="email"
+placeholder="Admin Email">
+
+<input
+id="password"
+class="input"
+type="password"
+placeholder="Password">
+
+<button class="login-btn" onclick="login()">
+LOGIN TO ADMIN
+</button>
+
+<div id="error" class="error"></div>
+
+</div>
+</section>
+
+
+<!-- ADMIN DASHBOARD -->
+
+<section id="adminPage" class="admin hidden">
+
+<header class="topbar">
+
+<h2>YH <span>NEXORA</span> ADMIN</h2>
+
+<button class="logout" onclick="logout()">
+Logout
+</button>
+
+</header>
+
+
+<div class="container">
+
+<div class="welcome">
+
+<h1>Welcome, <span>Admin 👋</span></h1>
+
+<p>Manage your YH NEXORA website from here.</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- COMPANY -->
+
+<div class="card">
+
+<h2>🏢 Company Details</h2>
+
+<label>Company Name</label>
+<input id="companyName" class="input" value="YH NEXORA TECHNOLOGIES">
+
+<label>Tagline</label>
+<input id="tagline" class="input" value="Ideas Into Impact">
+
+<label>Establishment Date</label>
+<input id="establishment" class="input" value="28/10/2025">
+
+<label>Location</label>
+<input id="location" class="input" value="Online (Remote)">
+
+</div>
+
+
+<!-- FOUNDER -->
+
+<div class="card">
+
+<h2>👤 Founder</h2>
+
+<label>Founder Name</label>
+<input id="founderName" class="input" value="Yeswanth">
+
+<label>Founder Image</label>
+
+<div class="image-box">
+
+<img id="founderPreview" class="preview">
+
+<input
+type="file"
+accept="image/*"
+onchange="uploadImage(event,'founder')">
+
+</div>
+
+</div>
+
+
+<!-- CO FOUNDER -->
+
+<div class="card">
+
+<h2>👥 Co-Founder</h2>
+
+<label>Co-Founder Name</label>
+<input id="cofounderName" class="input" value="Amar nadh">
+
+<label>Co-Founder Image</label>
+
+<div class="image-box">
+
+<img id="cofounderPreview" class="preview">
+
+<input
+type="file"
+accept="image/*"
+onchange="uploadImage(event,'cofounder')">
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<div class="card">
+
+<h2>ℹ️ About Us</h2>
+
+<label>About Company</label>
+
+<textarea id="aboutText">At YH NEXORA TECHNOLOGIES, we turn ideas into powerful digital experiences. We create websites, design stunning graphics, and run smart promotions to help your brand grow online.</textarea>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<div class="card full">
+
+<h2>🛠 Services</h2>
+
+<label>Service 1</label>
+<input id="service1" class="input"
+value="Website Development">
+
+<label>Service 1 Description</label>
+<textarea id="service1Desc">Modern, Responsive & High-Performance Websites for Your Business.</textarea>
+
+
+<label>Service 2</label>
+<input id="service2" class="input"
+value="Graphic Design">
+
+<label>Service 2 Description</label>
+<textarea id="service2Desc">Logos, Banners, Posters, Social Media Designs & More.</textarea>
+
+
+<label>Service 3</label>
+<input id="service3" class="input"
+value="Digital Promotions">
+
+<label>Service 3 Description</label>
+<textarea id="service3Desc">Social Media Marketing, Branding, Promotion & Growth.</textarea>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="card">
+
+<h2>📊 Website Stats</h2>
+
+<label>Happy Clients</label>
+<input id="clients" class="input" value="0+">
+
+<label>Projects Done</label>
+<input id="projects" class="input" value="0+">
+
+<label>Creative Minds</label>
+<input id="minds" class="input" value="2">
+
+<label>Big Dreams</label>
+<input id="dreams" class="input" value="∞">
+
+</div>
+
+
+<!-- PRICING -->
+
+<div class="card">
+
+<h2>💰 Pricing</h2>
+
+<label>Website Development Price</label>
+<input id="websitePrice" class="input" value="₹10,000">
+
+<label>YouTube Thumbnail Price</label>
+<input id="thumbnailPrice" class="input" value="₹300">
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="card">
+
+<h2>📞 Contact Details</h2>
+
+<label>WhatsApp</label>
+<input id="whatsapp" class="input"
+value="@yeswanth5436">
+
+<label>Email</label>
+<input id="contactEmail" class="input"
+value="yeswanthram29@gmail.com">
+
+<label>Instagram</label>
+<input id="instagram" class="input"
+value="YH NEXORA TECHNOLOGIES">
+
+</div>
+
+
+<!-- PORTFOLIO -->
+
+<div class="card full">
+
+<h2>📁 Portfolio Project</h2>
+
+<label>Project Name</label>
+<input id="portfolioName" class="input"
+value="Love Proposal Website 💗">
+
+<label>Project Description</label>
+
+<textarea id="portfolioDescription">Interactive Love Proposal Website with animations, music and no-button escape.</textarea>
+
+<label>Project Status</label>
+
+<select id="portfolioStatus">
+
+<option>Live</option>
+<option>Coming Soon</option>
+<option>Private</option>
+
+</select>
+
+</div>
+
+
+<!-- FOUNDER MESSAGE -->
+
+<div class="card full">
+
+<h2>💡 Founder's Desk</h2>
+
+<label>Founder Quote</label>
+
+<textarea id="founderQuote">Dream big, work smart, and let technology do the magic.</textarea>
+
+</div>
+
+
+</div>
+
+
+<button class="save-btn" onclick="saveData()">
+💾 SAVE ALL CHANGES
+</button>
+
+</div>
+
+</section>
+
+
+<div id="status" class="status">
+Saved Successfully ✓
+</div>
+
+
+<script>
+
+/* LOGIN */
+
+const ADMIN_EMAIL = "yhnexora@ai.com";
+const ADMIN_PASSWORD = "yhnexora5436@";
+
+
+function login(){
+
+    const email =
+    document.getElementById("email").value.trim();
+
+    const password =
+    document.getElementById("password").value;
+
+    if(email === ADMIN_EMAIL &&
+       password === ADMIN_PASSWORD){
+
+        document.getElementById("loginPage")
+        .classList.add("hidden");
+
+        document.getElementById("adminPage")
+        .classList.remove("hidden");
+
+        loadData();
+
+    }else{
+
+        document.getElementById("error")
+        .textContent =
+        "Invalid email or password.";
+
+    }
+
+}
+
+
+/* LOGOUT */
+
+function logout(){
+
+    document.getElementById("adminPage")
+    .classList.add("hidden");
+
+    document.getElementById("loginPage")
+    .classList.remove("hidden");
+
+    document.getElementById("email").value="";
+    document.getElementById("password").value="";
+
+}
+
+
+/* IMAGE UPLOAD */
+
+function uploadImage(event,type){
+
+    const file = event.target.files[0];
+
+    if(!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        localStorage.setItem(
+            type+"Image",
+            e.target.result
+        );
+
+        document.getElementById(
+            type+"Preview"
+        ).src = e.target.result;
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* SAVE DATA */
+
+function saveData(){
+
+    const fields = [
+
+        "companyName",
+        "tagline",
+        "establishment",
+        "location",
+
+        "founderName",
+        "cofounderName",
+
+        "aboutText",
+
+        "service1",
+        "service1Desc",
+        "service2",
+        "service2Desc",
+        "service3",
+        "service3Desc",
+
+        "clients",
+        "projects",
+        "minds",
+        "dreams",
+
+        "websitePrice",
+        "thumbnailPrice",
+
+        "whatsapp",
+        "contactEmail",
+        "instagram",
+
+        "portfolioName",
+        "portfolioDescription",
+        "portfolioStatus",
+
+        "founderQuote"
+
+    ];
+
+    fields.forEach(function(id){
+
+        const element =
+        document.getElementById(id);
+
+        localStorage.setItem(
+            id,
+            element.value
+        );
+
+    });
+
+    showStatus();
+
+}
+
+
+/* LOAD DATA */
+
+function loadData(){
+
+    const fields = [
+
+        "companyName",
+        "tagline",
+        "establishment",
+        "location",
+
+        "founderName",
+        "cofounderName",
+
+        "aboutText",
+
+        "service1",
+        "service1Desc",
+        "service2",
+        "service2Desc",
+        "service3",
+        "service3Desc",
+
+        "clients",
+        "projects",
+        "minds",
+        "dreams",
+
+        "websitePrice",
+        "thumbnailPrice",
+
+        "whatsapp",
+        "contactEmail",
+        "instagram",
+
+        "portfolioName",
+        "portfolioDescription",
+        "portfolioStatus",
+
+        "founderQuote"
+
+    ];
+
+    fields.forEach(function(id){
+
+        const value =
+        localStorage.getItem(id);
+
+        if(value !== null){
+
+            document.getElementById(id).value =
+            value;
+
+        }
+
+    });
+
+
+    const founder =
+    localStorage.getItem("founderImage");
+
+    if(founder){
+
+        document.getElementById(
+            "founderPreview"
+        ).src = founder;
+
+    }
+
+
+    const cofounder =
+    localStorage.getItem("cofounderImage");
+
+    if(cofounder){
+
+        document.getElementById(
+            "cofounderPreview"
+        ).src = cofounder;
+
+    }
+
+}
+
+
+/* STATUS */
+
+function showStatus(){
+
+    const status =
+    document.getElementById("status");
+
+    status.style.display="block";
+
+    setTimeout(function(){
+
+        status.style.display="none";
+
+    },2500);
+
+}
+
+</script>
+
+</body>
+</html>
